@@ -6,8 +6,6 @@ import datetime
 import os
 
 today = datetime.datetime.today().strftime ('%d-%b-%Y')
-#today = str(today)
-#print(today)
 
 source1 = requests.get('http://www.assamtribune.com/da/index.html').text
 soup1 = BeautifulSoup(source1, 'lxml')
