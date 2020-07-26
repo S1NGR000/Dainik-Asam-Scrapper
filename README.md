@@ -8,4 +8,4 @@ Python Script for downloading daily edition of Assamese ePaper DAINIK ASAM and A
 
 ## Start Scrapping:
 - open terminal and run the script using `python scrapper.py`
-- it will download the latest paper in pdf form in same folder.
+- it will download the latest e-paper in pdf format in same folder.

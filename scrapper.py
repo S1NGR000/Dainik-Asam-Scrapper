@@ -3,24 +3,19 @@ import requests
 import re
 import wget
 import datetime
-import os
 
 today = datetime.datetime.today().strftime ('%d-%b-%Y')
-
 arr = ['http://www.assamtribune.com/da/index.html', 'http://www.assamtribune.com/at/']
 
 for link in arr:
     source1 = requests.get(link).text
     soup1 = BeautifulSoup(source1, 'lxml')
-
     for meta1 in soup1.find_all('meta'):
         meta = meta1['content']
-
     link1 = re.sub('0; url=', '', meta)
 
     source2 = requests.get(link1).text
     soup2 = BeautifulSoup(source2, 'lxml')
-
     link2 = soup2.find(class_= 'Toplink')['href']
     link2 = link2.replace("javascript:PopupWindow('atda.asp?id", "http://www.assamtribune.com/scripts/atda.asp?id")
     link2 = link2.replace("');", "")
