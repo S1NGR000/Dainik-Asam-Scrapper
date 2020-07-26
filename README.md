@@ -1,5 +1,5 @@
 # Dainik-Asam-Scrapper
-Python Script for downloading daily edition of Assamese ePaper DAINIK ASAM from it's official website.
+Python Script for downloading daily edition of Assamese ePaper DAINIK ASAM and ASSAM TRIBUNE from it's official website.
 
 
 ## Requirements:
