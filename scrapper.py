@@ -3,7 +3,20 @@ import requests                     #for fetching the source
 import re                           #for cleaning the urls
 import wget                         #for downloading the pdf
 import datetime                     #for renaming the newspaper 
+import os                           #for interacting with system
 
+os.system("title Dainik Asam Scrapper")
+os.system('cls' if os.name == 'nt' else 'clear')
+print('\n\n  ██████  ██▓ ███▄    █   ▄████  ██▀███   ▒█████   ▒█████   ▒█████  \n'
+'▒██    ▒ ▓██▒ ██ ▀█   █  ██▒ ▀█▒▓██ ▒ ██▒▒██▒  ██▒▒██▒  ██▒▒██▒  ██▒\n'
+'░ ▓██▄   ▒██▒▓██  ▀█ ██▒▒██░▄▄▄░▓██ ░▄█ ▒▒██░  ██▒▒██░  ██▒▒██░  ██▒\n'
+'  ▒   ██▒░██░▓██▒  ▐▌██▒░▓█  ██▓▒██▀▀█▄  ▒██   ██░▒██   ██░▒██   ██░\n'
+'▒██████▒▒░██░▒██░   ▓██░░▒▓███▀▒░██▓ ▒██▒░ ████▓▒░░ ████▓▒░░ ████▓▒░\n'
+'▒ ▒▓▒ ▒ ░░▓  ░ ▒░   ▒ ▒  ░▒   ▒ ░ ▒▓ ░▒▓░░ ▒░▒░▒░ ░ ▒░▒░▒░ ░ ▒░▒░▒░ \n'
+'░ ░▒  ░ ░ ▒ ░░ ░░   ░ ▒░  ░   ░   ░▒ ░ ▒░  ░ ▒ ▒░   ░ ▒ ▒░   ░ ▒ ▒░ \n'
+'░  ░  ░   ▒ ░   ░   ░ ░ ░ ░   ░   ░░   ░ ░ ░ ░ ▒  ░ ░ ░ ▒  ░ ░ ░ ▒  \n'
+'      ░   ░           ░       ░    ░         ░ ░      ░ ░      ░ ░  \n'
+'\nScrapping links, please wait...\n\n')
 #fetches today's date
 today = datetime.datetime.today().strftime ('%d-%b-%Y')
 
@@ -43,6 +56,8 @@ for link in arr:
 
     #downloads the pdf and rename them according to the newspaper name
     if link == arr[0]:
+        print('\nDownloading latest edition of Dainik Asam:')
         wget.download(link3, out=f'Dainik_Asam_{today}.pdf')
     else:
+        print('\n\n\nDownloading latest edition of Assam Tribune:')
         wget.download(link3, out=f'Assam_Tribune_{today}.pdf')
